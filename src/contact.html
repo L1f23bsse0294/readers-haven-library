@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Readers' Haven Public Library - address, phone, email and feedback form.">
+  <title>Contact &amp; Feedback | Readers' Haven Public Library</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/contact.css">
+</head>
+<body class="page-contact">
+
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <span>Open today 9:00 am &ndash; 8:00 pm</span>
+      <span>Helpdesk: 042-3575-0410</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">RH</span>
+        <span class="brand-text">
+          <strong>Readers&rsquo; Haven</strong>
+          <small>Public Library &middot; since 1962</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="membership.html">Membership</a>
+        <a href="services.html">Digital Services</a>
+        <a href="contact.html" class="current">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <p class="eyebrow">Contact &amp; Feedback</p>
+        <h1>Get in touch</h1>
+        <p class="lead">
+          Questions about your account, a book you&rsquo;d like us to buy, or something
+          we could do better &mdash; we read every message and reply within two working days.
+        </p>
+      </div>
+    </section>
+
+    <section class="wrap section contact-grid">
+      <div class="contact-details">
+        <div class="detail">
+          <h2>Visit</h2>
+          <address>
+            Readers&rsquo; Haven Public Library<br>
+            27 Canal View Road<br>
+            Opposite the old fire station<br>
+            Lahore 54000
+          </address>
+        </div>
+        <div class="detail">
+          <h2>Call</h2>
+          <p>Front desk: <a href="tel:+924235750410">042-3575-0410</a></p>
+          <p>Children&rsquo;s Corner: <a href="tel:+924235750412">042-3575-0412</a></p>
+        </div>
+        <div class="detail">
+          <h2>Email</h2>
+          <p>General: <a href="mailto:info@readershaven-library.pk">info@readershaven-library.pk</a></p>
+          <p>Membership: <a href="mailto:members@readershaven-library.pk">members@readershaven-library.pk</a></p>
+        </div>
+
+        <div class="map-box">
+          <iframe
+            title="Map showing the library location"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=74.300%2C31.535%2C74.345%2C31.565&amp;layer=mapnik"
+            loading="lazy"></iframe>
+          <p class="small-note">Map data &copy; OpenStreetMap contributors</p>
+        </div>
+      </div>
+
+      <form class="feedback-form" action="#" method="post">
+        <h2>Send us feedback</h2>
+        <p class="small-note">Fields marked * are required.</p>
+
+        <label for="name">Your name *</label>
+        <input type="text" id="name" name="name" required placeholder="e.g. Ayesha Khan">
+
+        <label for="email">Email address *</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+
+        <label for="topic">What is it about?</label>
+        <select id="topic" name="topic">
+          <option>General question</option>
+          <option>Membership or fines</option>
+          <option>Request a book</option>
+          <option>Complaint or suggestion</option>
+        </select>
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Write your message here"></textarea>
+
+        <button type="submit" class="btn btn-solid">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Readers&rsquo; Haven Public Library</strong>
+        <p>27 Canal View Road, Lahore</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="membership.html">Membership</a>
+        <a href="services.html">Digital Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-small">Book covers courtesy of the Open Library Covers API. Photos via Lorem Picsum.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
