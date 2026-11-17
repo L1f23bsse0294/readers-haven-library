@@ -1,3 +1,7 @@
+/* Readers' Haven shared styles */
+/* Member 1 - Collections: small phones */
+@media (max-width: 400px) {
+  .jump-list a { padding: 0.3rem 0.7rem; font-size: 0.85rem; }
 /* Readers' Haven shared styles *//* Member 3 - Services: small phones */
 @media (max-width: 400px) {
   .timing { display: block; text-align: center; }
