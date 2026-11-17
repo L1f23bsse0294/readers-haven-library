@@ -1,0 +1,96 @@
+/* =============================================================
+   Contact page styles 
+   ============================================================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.detail {
+  padding: 0 0 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.detail h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.detail p,
+.detail address {
+  margin: 0 0 0.2rem;
+  font-style: normal;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 260px;
+  border: 1px solid var(--line);
+  display: block;
+}
+
+.feedback-form {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--oxblood);
+  padding: 1.8rem;
+}
+
+.feedback-form h2 {
+  margin-bottom: 0.2rem;
+}
+
+.feedback-form label {
+  display: block;
+  margin: 1rem 0 0.35rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #bfb299;
+  border-radius: 2px;
+  background: var(--paper);
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+  background: var(--white);
+}
+
+.feedback-form textarea {
+  resize: vertical;
+}
+
+.feedback-form .btn {
+  margin-top: 1.4rem;
+}
+
+@media (max-width: 820px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .feedback-form {
+    padding: 1.3rem;
+  }
+
+  .feedback-form .btn {
+    width: 100%;
+  }
+}
