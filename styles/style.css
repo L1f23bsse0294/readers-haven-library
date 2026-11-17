@@ -1,1 +1,116 @@
 /* Readers' Haven shared styles */
+/* =============================================================
+   Collections page styles (Member 1)
+   Loaded after ../styles/style.css
+   ============================================================= */
+
+.jump-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.jump-list a {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--green);
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--green);
+  font-size: 0.9rem;
+}
+
+.jump-list a:hover {
+  background: var(--green);
+  color: var(--white);
+}
+
+.shelf {
+  padding: 2.8rem 0 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.shelf-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.shelf-head h2 {
+  margin: 0;
+}
+
+.shelf-head p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 1.6rem;
+  padding-bottom: 1.4rem;
+  /* the wooden shelf line under each row */
+  border-bottom: 10px solid #8a6a46;
+  box-shadow: 0 6px 0 -2px #6d5236;
+}
+
+.book .cover {
+  aspect-ratio: 2 / 3;
+  background: var(--paper-dark);
+  border: 1px solid var(--line);
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.book .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book .author {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.book .shelfmark {
+  display: inline-block;
+  margin: 0.4rem 0 0;
+  padding: 0.05rem 0.45rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.78rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.shelf-kids .book .shelfmark {
+  border-color: var(--brass);
+}
+
+@media (max-width: 860px) {
+  .books {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .books {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+
+  .book h3 {
+    font-size: 1rem;
+  }
+}
