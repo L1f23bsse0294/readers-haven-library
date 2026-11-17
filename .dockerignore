@@ -1,0 +1,14 @@
+# Keep the build context small: only package*.json, src/ and styles/ are needed
+node_modules
+dist
+.parcel-cache
+.git
+.gitignore
+.dockerignore
+Dockerfile
+README.md
+.env
+*.env
+.vscode
+.DS_Store
+Thumbs.db

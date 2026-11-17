@@ -1,0 +1,15 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.parcel-cache/
+
+# secrets - never commit
+.env
+*.env
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
