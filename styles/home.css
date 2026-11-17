@@ -1,0 +1,210 @@
+/* =============================================================
+   Home page styles (Team Lead)
+   Loaded after ../styles/style.css
+   ============================================================= */
+
+.home-intro {
+  padding: 3.5rem 0;
+  background: var(--paper-dark);
+  border-bottom: 1px solid var(--line);
+}
+
+.home-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.home-intro-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 6.5;
+  object-fit: cover;
+  background: var(--line);
+}
+
+.home-intro-photo {
+  margin: 0;
+  background: var(--white);
+  padding: 0.7rem 0.7rem 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transform: rotate(1.2deg);
+}
+
+.home-intro-photo img {
+  filter: sepia(0.25) contrast(1.05);
+}
+
+.home-intro-photo figcaption {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding-top: 0.5rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 3rem;
+}
+
+.dropcap::first-letter {
+  float: left;
+  font-family: var(--serif);
+  font-size: 3.4rem;
+  line-height: 0.9;
+  padding: 0.2rem 0.5rem 0 0;
+  color: var(--oxblood);
+}
+
+.hours-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 1.6rem;
+}
+
+.hours {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.hours th,
+.hours td {
+  text-align: left;
+  padding: 0.55rem 0;
+  border-bottom: 1px dotted var(--line);
+  vertical-align: top;
+}
+
+.hours th {
+  font-weight: 500;
+}
+
+.hours td {
+  text-align: right;
+}
+
+.hours .closed td {
+  color: var(--oxblood);
+  font-weight: 600;
+}
+
+.noticeboard {
+  background: #8a6a46;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 6px 6px;
+  padding: 3rem 0 3.5rem;
+}
+
+.board-title {
+  color: var(--paper);
+  margin-bottom: 1.8rem;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+}
+
+.note {
+  position: relative;
+  padding: 1.6rem 1.1rem 1.1rem;
+  background: #fdf8e7;
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.18);
+  font-size: 0.93rem;
+}
+
+.note p {
+  margin: 0;
+}
+
+.note-a { transform: rotate(-1.5deg); }
+.note-b { transform: rotate(1deg); background: #eef3e6; }
+.note-c { transform: rotate(-0.6deg); }
+.note-d { transform: rotate(1.8deg); background: #f7e8e2; }
+
+.pin {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  border-radius: 50%;
+  background: var(--oxblood);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.4rem 1.2rem 1.4rem 0;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.quick-link strong {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--green-dark);
+}
+
+.quick-link span {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.quick-link .ql-num {
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.quick-link:hover strong {
+  color: var(--oxblood);
+  text-decoration: underline;
+}
+
+.location {
+  padding-top: 0;
+}
+
+.location p {
+  max-width: 65ch;
+}
+
+@media (max-width: 860px) {
+  .home-intro-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .home-intro-photo {
+    transform: none;
+  }
+
+  .notes,
+  .quick-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .notes,
+  .quick-links {
+    grid-template-columns: 1fr;
+  }
+}
