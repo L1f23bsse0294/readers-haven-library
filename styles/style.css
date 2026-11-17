@@ -1,1 +1,98 @@
-/* Readers' Haven shared styles */
+/* Readers' Haven shared styles *//* =============================================================
+   Digital Services page styles (Member 3)
+   Loaded after ../styles/style.css
+   ============================================================= */
+
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+/* alternate the photo side so the page doesn't feel like a template */
+.service:nth-child(even) {
+  grid-template-columns: 1fr 340px;
+}
+
+.service:nth-child(even) img {
+  order: 2;
+}
+
+.service img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  filter: sepia(0.35);
+  border: 6px solid var(--white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.service-body h2 {
+  margin-bottom: 0.4rem;
+}
+
+.service-body p {
+  margin-top: 0;
+}
+
+.steps {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.steps li {
+  margin-bottom: 0.3rem;
+}
+
+.timing {
+  display: inline-block;
+  margin: 0;
+  padding: 0.3rem 0.8rem;
+  background: var(--green);
+  color: var(--paper);
+  font-size: 0.85rem;
+}
+
+.price-mini {
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.price-mini th,
+.price-mini td {
+  padding: 0.35rem 1.4rem 0.35rem 0;
+  border-bottom: 1px dotted var(--line);
+  text-align: left;
+}
+
+.price-mini th {
+  font-weight: 400;
+}
+
+code {
+  background: var(--paper-dark);
+  padding: 0.05rem 0.35rem;
+  font-size: 0.9em;
+}
+
+@media (max-width: 780px) {
+  .service,
+  .service:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .service:nth-child(even) img {
+    order: 0;
+  }
+}
