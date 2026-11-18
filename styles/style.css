@@ -1,3 +1,12 @@
+/* Readers' Haven shared styles */
+/* Member 1 - Collections: small phones */
+@media (max-width: 400px) {
+  .jump-list a { padding: 0.3rem 0.7rem; font-size: 0.85rem; }
+} /* <-- this closing brace was missing; it ends the @media block above */
+/* Readers' Haven shared styles *//* Member 3 - Services: small phones */
+@media (max-width: 400px) {
+  .timing { display: block; text-align: center; }
+}
 /* =============================================================
    Readers' Haven Public Library - SHARED stylesheet (Team Lead)
    Used by every page: colours, fonts, buttons, header, nav, footer.
