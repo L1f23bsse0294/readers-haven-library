@@ -1,0 +1,165 @@
+/* =============================================================
+   Membership page styles (Member 2)
+   Loaded after ../styles/style.css
+   ============================================================= */
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+  align-items: start;
+}
+
+.plan {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--green);
+  padding: 1.4rem 1.3rem 1.2rem;
+}
+
+.plan-featured {
+  border-top-color: var(--oxblood);
+  box-shadow: 0 4px 0 var(--line);
+}
+
+.plan-tag {
+  position: absolute;
+  top: -0.9rem;
+  right: 1rem;
+  margin: 0;
+  padding: 0.1rem 0.6rem;
+  background: var(--oxblood);
+  color: var(--paper);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.plan-top h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.price {
+  margin: 0.3rem 0 1rem;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--oxblood);
+}
+
+.price span {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+}
+
+.plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.93rem;
+}
+
+.plan-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px dotted var(--line);
+  font-weight: 600;
+}
+
+.plan-list li span {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.plan-note {
+  margin: 0.9rem 0 0;
+  font-size: 0.83rem;
+  color: var(--ink-soft);
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.compare {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  background: var(--white);
+  font-size: 0.95rem;
+}
+
+.compare th,
+.compare td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.compare thead th {
+  background: var(--green);
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.compare tbody tr:nth-child(even) {
+  background: var(--paper);
+}
+
+.due-slip {
+  position: relative;
+  max-width: 760px;
+  padding: 2rem 2.2rem;
+  background: #fbf6e8;
+  border: 1px solid var(--line);
+  /* ruled lines like an old due-date slip */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    #e3d8c0 31px,
+    #e3d8c0 32px
+  );
+}
+
+.due-slip ol {
+  margin: 0;
+  padding-left: 1.3rem;
+  line-height: 2;
+}
+
+.stamp {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.2rem;
+  margin: 0;
+  padding: 0.3rem 0.7rem;
+  border: 3px solid var(--oxblood);
+  color: var(--oxblood);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
+  transform: rotate(-8deg);
+}
+
+@media (max-width: 960px) {
+  .plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .plans {
+    grid-template-columns: 1fr;
+  }
+
+  .due-slip {
+    padding: 1.5rem 1.2rem 4rem;
+  }
+}
