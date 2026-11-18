@@ -1,32 +1,131 @@
 /* =============================================================
-   Collections page styles (Member 1)
-   Loaded after ../styles/style.css
+   Readers' Haven Public Library - SHARED stylesheet (Team Lead)
+   Used by every page: colours, fonts, buttons, header, nav, footer.
+   Each page also has its own file in styles/ for page-specific rules.
    ============================================================= */
 
-.jump-list {
-  list-style: none;
-  padding: 0;
-  margin: 1.4rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+/* ---------- 1. Base & variables ---------- */
+:root {
+  --paper: #f5efe3;
+  --paper-dark: #ebe2d0;
+  --ink: #2b2723;
+  --ink-soft: #5c544b;
+  --green: #23402f;
+  --green-dark: #182d21;
+  --oxblood: #7b2d1e;
+  --brass: #b58a3a;
+  --line: #d6cab3;
+  --white: #fffdf8;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
-.jump-list a {
-  display: inline-block;
-  padding: 0.35rem 0.9rem;
-  border: 1px solid var(--green);
-  border-radius: 20px;
-  text-decoration: none;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--green-dark);
+}
+
+h1 { font-size: 2.6rem; margin: 0 0 0.6rem; }
+h2 { font-size: 1.6rem; margin: 0 0 0.8rem; }
+h3 { font-size: 1.1rem; margin: 0 0 0.3rem; }
+
+a {
+  color: var(--oxblood);
+}
+
+a:hover {
   color: var(--green);
-  font-size: 0.9rem;
 }
 
-.jump-list a:hover {
+.wrap {
+  width: 92%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  font-weight: 600;
+}
+
+.lead {
+  font-size: 1.12rem;
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
+.small-note {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.3rem;
+  border: 2px solid var(--green);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: var(--sans);
+}
+
+.btn-solid {
   background: var(--green);
   color: var(--white);
 }
 
+.btn-solid:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: var(--white);
+}
+
+.btn-line {
+  color: var(--green);
+  background: transparent;
+}
+
+.btn-line:hover {
+  background: var(--green);
+  color: var(--white);
+}
+
+/* ---------- Collections page: bookshelves (Member 1) ---------- */
 .shelf {
   padding: 2.8rem 0 1.5rem;
   border-bottom: 1px solid var(--line);
@@ -97,13 +196,191 @@
   border-color: var(--brass);
 }
 
+/* Collections: 3 books per row on tablets */
 @media (max-width: 860px) {
   .books {
     grid-template-columns: repeat(3, 1fr);
+  } /* FIX: this brace was missing - it closes .books */
+} /* FIX: this brace was missing - it closes the @media block */
+
+/* ---------- Shared layout pieces ---------- */
+.btn-row {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.callout {
+  margin: 0;
+  padding: 1.2rem 1.4rem;
+  border-left: 4px solid var(--brass);
+  background: var(--white);
+}
+
+.page-head {
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-dark);
+}
+
+
+/* ---------- 2. Header / nav / footer ---------- */
+.topbar {
+  background: var(--green-dark);
+  color: #d9d2c1;
+  font-size: 0.82rem;
+}
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.35rem 0;
+}
+
+.site-header {
+  background: var(--white);
+  border-bottom: 3px double var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: var(--oxblood);
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 50%;
+  border: 2px solid var(--brass);
+}
+
+.brand-text strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--green-dark);
+}
+
+.brand-text small {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover {
+  color: var(--oxblood);
+  border-bottom-color: var(--line);
+}
+
+.main-nav a.current {
+  color: var(--oxblood);
+  border-bottom-color: var(--oxblood);
+  font-weight: 600;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  background: var(--green-dark);
+  color: #cfc7b5;
+  padding: 2.2rem 0 1.4rem;
+  font-size: 0.92rem;
+}
+
+.site-footer strong {
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+}
+
+.site-footer p {
+  margin: 0.3rem 0 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-footer nav {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.site-footer nav a {
+  color: #cfc7b5;
+  text-decoration: none;
+}
+
+.site-footer nav a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.footer-small {
+  flex-basis: 100%;
+  border-top: 1px solid #34503f;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: #9fa89a;
+}
+
+/* ---------- 3. Responsive rules ---------- */
+
+/* Tablets (860px and below) - header, nav and type on every page */
+@media (max-width: 860px) {
+  h1 { font-size: 2rem; }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    gap: 0.9rem;
   }
 }
 
+/* Phones (520px and below)
+   FIX: the collections rules and the shared rules are now
+   together inside ONE @media block, and the stray } is gone */
 @media (max-width: 520px) {
+  /* Collections: 2 books per row */
   .books {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem 1rem;
@@ -112,5 +389,37 @@
   .book h3 {
     font-size: 1rem;
   }
+
+  /* Shared: smaller text and stacked top bar */
+  body { font-size: 16px; }
+
+  .topbar-inner {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
 }
-/* Readers' Haven shared styles */
+
+/* Muswir - Home Page: small phones */
+@media (max-width: 400px) {
+  .hero h1 { font-size: 1.7rem; }
+}
+
+/* Member 1 - Collections: small phones */
+@media (max-width: 400px) {
+  .jump-list a { padding: 0.3rem 0.7rem; font-size: 0.85rem; }
+}
+
+/* Member 2 - Membership: small phones */
+@media (max-width: 400px) {
+  .price { font-size: 1.4rem; }
+}
+
+/* Member 3 - Services: small phones */
+@media (max-width: 400px) {
+  .timing { display: block; text-align: center; }
+}
+
+/* Member 4 - Contact: small phones */
+@media (max-width: 400px) {
+  .map-box iframe { height: 200px; }
+}
