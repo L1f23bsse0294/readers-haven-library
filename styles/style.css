@@ -1,6 +1,3 @@
-/* Readers' Haven shared styles */
-
-
 /* =============================================================
    Readers' Haven Public Library - SHARED stylesheet (Team Lead)
    Used by every page: colours, fonts, buttons, header, nav, footer.
@@ -128,6 +125,85 @@ a:hover {
   color: var(--white);
 }
 
+/* ---------- Collections page: bookshelves (Member 1) ---------- */
+.shelf {
+  padding: 2.8rem 0 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.shelf-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.shelf-head h2 {
+  margin: 0;
+}
+
+.shelf-head p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 1.6rem;
+  padding-bottom: 1.4rem;
+  /* the wooden shelf line under each row */
+  border-bottom: 10px solid #8a6a46;
+  box-shadow: 0 6px 0 -2px #6d5236;
+}
+
+.book .cover {
+  aspect-ratio: 2 / 3;
+  background: var(--paper-dark);
+  border: 1px solid var(--line);
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.book .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book .author {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.book .shelfmark {
+  display: inline-block;
+  margin: 0.4rem 0 0;
+  padding: 0.05rem 0.45rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.78rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.shelf-kids .book .shelfmark {
+  border-color: var(--brass);
+}
+
+/* Collections: 3 books per row on tablets */
+@media (max-width: 860px) {
+  .books {
+    grid-template-columns: repeat(3, 1fr);
+  } /* FIX: this brace was missing - it closes .books */
+} /* FIX: this brace was missing - it closes the @media block */
+
+/* ---------- Shared layout pieces ---------- */
 .btn-row {
   display: flex;
   gap: 0.8rem;
@@ -284,7 +360,9 @@ a:hover {
   color: #9fa89a;
 }
 
-/* Responsive header, nav and type - applies to every page */
+/* ---------- 3. Responsive rules ---------- */
+
+/* Tablets (860px and below) - header, nav and type on every page */
 @media (max-width: 860px) {
   h1 { font-size: 2rem; }
 
@@ -298,7 +376,21 @@ a:hover {
   }
 }
 
+/* Phones (520px and below)
+   FIX: the collections rules and the shared rules are now
+   together inside ONE @media block, and the stray } is gone */
 @media (max-width: 520px) {
+  /* Collections: 2 books per row */
+  .books {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+
+  .book h3 {
+    font-size: 1rem;
+  }
+
+  /* Shared: smaller text and stacked top bar */
   body { font-size: 16px; }
 
   .topbar-inner {
@@ -315,8 +407,14 @@ a:hover {
 /* Member 1 - Collections: small phones */
 @media (max-width: 400px) {
   .jump-list a { padding: 0.3rem 0.7rem; font-size: 0.85rem; }
-} /* <-- this closing brace was missing; it ends the @media block above */
-/* Readers' Haven shared styles *//* Member 3 - Services: small phones */
+}
+
+/* Member 2 - Membership: small phones */
+@media (max-width: 400px) {
+  .price { font-size: 1.4rem; }
+}
+
+/* Member 3 - Services: small phones */
 @media (max-width: 400px) {
   .timing { display: block; text-align: center; }
 }
